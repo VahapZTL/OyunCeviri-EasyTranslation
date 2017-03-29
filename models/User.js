@@ -5,13 +5,20 @@ var userSchema = mongoose.Schema({
 
     local: {
         name: String,
-        lastname:String,
+        surname:String,
         email: String,
         password: String,
         isAdmin: Boolean,
-        isManager: Boolean,
         isProjectManager: Boolean,
-        isTranslator: Boolean
+        isController: Boolean,
+        isProofReader: Boolean,
+        isTranslator: Boolean,
+        supportId: String,
+        bugReportId: String,
+        createdDate: {
+            type: Date,
+            default: Date.now
+        }
     }
 });
 
@@ -23,7 +30,19 @@ userSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
 };
 
-userSchema.method.findById = function(id, cb) {
+userSchema.methods.setRank = function (rank) {
+    var user = this;
+    if(rank === isProjectManager)
+        user.local.isProjectManager = true;
+    else if(rank === isController)
+        user.local.isController = true;
+    else if(rank === isProofReader)
+        user.local.isProofReader = true;
+    else if(rank === isTranslator)
+        user.local.isTranslator = true;
+};
+
+userSchema.methods.findById = function(id, cb) {
     process.nextTick(function() {
         var idx = id - 1;
         if (userSchema[idx]) {

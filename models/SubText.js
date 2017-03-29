@@ -6,7 +6,11 @@ var SubTextSchema = new Schema({
     texts: [{
         lineNum: String,
         text: String
-    }]
+    }],
+    createdDate: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 module.exports = mongoose.model('SubText', SubTextSchema);
