@@ -7,6 +7,9 @@ var userSchema = mongoose.Schema({
     local: {
         email: String,
         password: String,
+        isAdmin: Boolean,
+        isProjectManager: Boolean,
+        isTranslator: Boolean
     },
 
 });
