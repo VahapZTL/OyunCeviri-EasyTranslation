@@ -8,11 +8,7 @@ var userSchema = mongoose.Schema({
         surname:String,
         email: String,
         password: String,
-        isAdmin: Boolean,
-        isProjectManager: Boolean,
-        isController: Boolean,
-        isProofReader: Boolean,
-        isTranslator: Boolean,
+        userRole: String,
         supportId: String,
         bugReportId: String,
         createdDate: {
