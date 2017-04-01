@@ -1,0 +1,21 @@
+{
+  "name": "oyunceviri-easytranslation",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "VahapZTL <vahapoztel61@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/VahapZTL/OyunCeviri-EasyTranslation",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AdminLTE": "admin-lte#^2.3.11"
+  }
+}
