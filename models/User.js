@@ -9,8 +9,6 @@ var userSchema = mongoose.Schema({
         email: String,
         password: String,
         userRole: String,
-        supportId: String,
-        bugReportId: String,
         createdDate: {
             type: Date,
             default: Date.now
@@ -24,18 +22,6 @@ userSchema.methods.generateHash = function(password) {
 
 userSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
-};
-
-userSchema.methods.setRank = function (rank) {
-    var user = this;
-    if(rank === isProjectManager)
-        user.local.isProjectManager = true;
-    else if(rank === isController)
-        user.local.isController = true;
-    else if(rank === isProofReader)
-        user.local.isProofReader = true;
-    else if(rank === isTranslator)
-        user.local.isTranslator = true;
 };
 
 userSchema.methods.findById = function(id, cb) {
