@@ -33,6 +33,7 @@ var index = require('./routes/index');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
 var profile = require('./routes/profile');
+var addText = require('./routes/addText');
 var users = require('./routes/users');
 var logout = require('./routes/logout');
 
@@ -64,6 +65,7 @@ app.use('/', index);
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/signup', signup);
+app.use('/addText', addText);
 app.use('/profile', profile);
 app.use('/users', users);
 
