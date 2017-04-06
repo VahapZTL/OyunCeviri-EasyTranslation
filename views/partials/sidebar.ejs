@@ -32,6 +32,7 @@
                     <span class="pull-right-container">
             </span>
                 </a>
+            <% if(user.local.userRole == 'ProjectManager' || user.local.userRole == 'Administrator'){ %>
             <li class="treeview">
                 <a href="/signup">
                     <i class="fa fa-user-plus"></i>
@@ -48,6 +49,7 @@
                     <i class="fa fa-tasks"></i> <span>Görev Ekle</span>
                 </a>
             </li>
+            <% } %>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-tasks"></i> <span>Çevirileri Görüntüle</span>
