@@ -10,6 +10,8 @@ var SubTextSchema = new Schema({
         type: Schema.ObjectId,
         ref: 'MainText'
     },
+    isTranslated: Boolean,
+    isControlled: Boolean,
     createdDate: {
         type: Date,
         default: Date.now
