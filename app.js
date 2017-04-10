@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var fileUpload = require('express-fileupload');
 var passport = require('passport');
 var config = require('./config/config');
 var flash = require('connect-flash');
@@ -52,6 +53,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
+app.use(fileUpload({safeFileNames: true}));
 app.use(session({
     secret: config.SessionSecret,
     resave: false,
