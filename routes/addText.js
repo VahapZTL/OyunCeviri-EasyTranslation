@@ -9,17 +9,14 @@ router.get('/', isLoggedIn, function(req, res, next) {
 });
 
 router.post('/', isLoggedIn, function (req, res, next) {
-    if(!req.files) {
-        res.header("Content-Type", "text/plain; charset=utf-8");
-        return res.status(400).send('Dosya Yüklenirken Hata Oluştu!');
+    if(!req.files){
+
     }else{
-        var mainText = req.files.mainText;
-
-        mainText.mv('./public/uploads/incomingText.txt', function(err) {
-            if (err)
-                return res.status(500).send(err);
-
-            res.send('Dosya Yüklendi');
+        console.log(req.files.mainText.data.toString());
+        var data1 = req.files.mainText.data.toString();
+        res.json({
+            success: true,
+            data: data1
         });
     }
 });
