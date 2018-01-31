@@ -9,16 +9,20 @@ router.get('/', isLoggedIn, function(req, res, next) {
 });
 
 router.post('/', isLoggedIn, function (req, res, next) {
-    if(!req.files){
+    if (!req.files)
+        return res.status(400).send('No files were uploaded.');
 
-    }else{
-        console.log(req.files.mainText.data.toString());
-        var data1 = req.files.mainText.data.toString();
-        res.json({
-            success: true,
-            data: data1
-        });
-    }
+    // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+    const incomeFile = req.files.mainText;
+    const fileName = req.files.mainText.name;
+
+    // Use the mv() method to place the file somewhere on your server
+    incomeFile.mv(process.cwd() + '/public/uploads/' + fileName + '.zip' , function(err) {
+        if (err)
+            return res.status(500).send(err);
+
+        res.send('File uploaded!');
+    });
 });
 
 module.exports = router;
