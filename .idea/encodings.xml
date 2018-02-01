@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/public/uploads/incomingText.txt" charset="x-MacTurkish" />
+    <file url="file://$PROJECT_DIR$/public/uploads/AAAdeneme.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/public/uploads/AAAdeneme.txt" charset="ISO-8859-2" />
   </component>
 </project>

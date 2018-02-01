@@ -3,6 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 var mongoose = require('mongoose');
 var MainText = mongoose.model('MainText');
+var unzip = require('unzip-stream');
 
 router.get('/', isLoggedIn, function(req, res, next) {
     res.render('addText', {user: req.user});
@@ -21,6 +22,8 @@ router.post('/', isLoggedIn, function (req, res, next) {
         if (err)
             return res.status(500).send(err);
 
+        fs.createReadStream(process.cwd() + '/public/uploads/' + fileName + '.zip')
+            .pipe(unzip.Extract({ path: process.cwd() + '/public/uploads/' }));
         res.send('File uploaded!');
     });
 });
