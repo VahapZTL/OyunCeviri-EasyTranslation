@@ -25,7 +25,7 @@ router.post('/', isLoggedIn, function (req, res, next) {
         if (err)
             return res.status(500).send(err);
 
-        new Promise(function(resolve,reject) {
+        new Promise(function(resolve) {
 
             fs.createReadStream(process.cwd() + '/public/uploads/' + fileName + '.zip')
                 .pipe(unzip.Extract({ path: process.cwd() + '/public/uploads/' }));
@@ -40,8 +40,6 @@ router.post('/', isLoggedIn, function (req, res, next) {
 
             res.send('File uploaded!');
             return excelData;
-        }).catch(function (err) {
-            reject(err);
         });
     });
 });
