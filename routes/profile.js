@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', isLoggedIn, function(req, res, next) {
-    res.render('profile.ejs', {
+    res.render('profile', {
         user : req.user // get the user out of session and pass to template
     });
 });
