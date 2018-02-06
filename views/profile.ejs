@@ -23,37 +23,26 @@
         <section class="content">
             <div class="row">
                 <!-- left column -->
-                <div class="col-md-8 col-md-offset-2">
-                        <!-- /.box-header -->
-                        <div class="box box-primary">
-                            <div class="box-body box-profile">
-                                <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 ">
+                    <!-- /.box-header -->
+                    <div id="profileBoxId" class="box box-primary">
+                        <div class="box-body box-profile">
+                            <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
 
-                                <h3 class="profile-username text-center"><%= user.local.name %> <%= user.local.surname %></h3>
+                            <h3 class="profile-username text-center"><%= user.local.name %> <%= user.local.surname %></h3>
 
-                                <p class="text-muted text-center"><%= user.local.userRole %></p>
+                            <p class="text-muted text-center"><%= user.local.userRole %></p>
 
-                                <ul class="list-group list-group-unbordered">
-                                    <li class="list-group-item">
-                                        <p class="text-center"><b><%= user.local.email %></b></p>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <p class="text-center"><b><%= user.local.createdDate %></b></p>
-                                    </li>
-                                </ul>
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <p class="text-center"><b><%= user.local.email %></b></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p class="text-center"><b><%= user.local.createdDate %></b></p>
+                                </li>
+                            </ul>
 
-                                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-                        <!-- /.box -->
-
-                        <!-- About Me Box -->
-                        <div class="box box-primary">
-                            <div class="box-header with-border">
-                                <h3 class="box-title">About Me</h3>
-                            </div>
-                            <!-- /.box-header -->
                             <div class="box-body">
                                 <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
 
@@ -85,9 +74,70 @@
 
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
                             </div>
-                            <!-- /.box-body -->
+                            <button class="btn btn-success" onclick="hideProfileBox();">Bilgileri Düzenle</button>
                         </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                    <div id="editBoxId" class="personal-info hidden">
+
+                        <div class="alert alert-info alert-dismissable hidden">
+                            <a class="panel-close close" data-dismiss="alert">×</a>
+                            <i class="fa fa-coffee"></i>
+                            <p id="alertMessage"></p>
+                        </div>
+
+                        <h3>Bilgileriniz</h3>
+
+                        <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                            <div class="text-center" style="margin-bottom: 10px;">
+                                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                                <h6>Fotoğraf yükleyin...</h6>
+
+                                <input class="form-control" type="file" name="image">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Adınız:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" placeholder="Adınız" type="text" name="name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Soyadınız:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" placeholder="Soyadınız" type="text" name="surname">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Email:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" placeholder="email@gmail.com" type="text" name="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Şifre:</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" placeholder="11111122333" type="password" name="password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Şifre(tekrar):</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" placeholder="11111122333" type="password" name="_password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"></label>
+                                <div class="col-md-8">
+                                    <input class="btn btn-primary" value="Kaydet" type="button">
+                                    <span></span>
+                                    <input class="btn btn-default" value="İptal" type="reset" onclick="showProfileBox();">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+                <div class="col-md-4"></div>
             </div>
         </section>
 
@@ -117,6 +167,7 @@
 <script src="dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="dist/js/myJavaScript.js"></script>
 </body>
 
 </html>
