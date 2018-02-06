@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faee46d4-50e3-4d07-8c48-65952824bf18" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/dist/js/myJavaScript.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/config/passport.js" afterPath="$PROJECT_DIR$/config/passport.js" />
+      <change beforePath="$PROJECT_DIR$/routes/profile.js" afterPath="$PROJECT_DIR$/routes/profile.js" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.ejs" afterPath="$PROJECT_DIR$/views/partials/header.ejs" />
+      <change beforePath="$PROJECT_DIR$/views/partials/sidebar.ejs" afterPath="$PROJECT_DIR$/views/partials/sidebar.ejs" />
       <change beforePath="$PROJECT_DIR$/views/profile.ejs" afterPath="$PROJECT_DIR$/views/profile.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,11 +27,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="profile.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addText.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/addText.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="43" column="80" lean-forward="true" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/partials/sidebar.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="58" lean-forward="false" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/profile.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="125" column="76" lean-forward="false" selection-start-line="125" selection-start-column="76" selection-end-line="125" selection-end-column="76" />
+            <state relative-caret-position="-561">
+              <caret line="30" column="121" lean-forward="false" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="121" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -39,18 +62,18 @@
       <file leaf-file-name="profile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="419">
+              <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myJavaScript.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/dist/js/myJavaScript.js">
+      <file leaf-file-name="passport.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/passport.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+            <state relative-caret-position="323">
+              <caret line="52" column="63" lean-forward="false" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -61,6 +84,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addText.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/addText.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-17">
+              <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -109,7 +142,6 @@
         <option value="$PROJECT_DIR$/models/MainText.js" />
         <option value="$PROJECT_DIR$/models/Support.js" />
         <option value="$PROJECT_DIR$/public/css/bootstrap.min.css" />
-        <option value="$PROJECT_DIR$/config/passport.js" />
         <option value="$PROJECT_DIR$/routes/login.js" />
         <option value="$PROJECT_DIR$/public/dist/css/AdminLTE.css" />
         <option value="$PROJECT_DIR$/public/dist/css/AdminLTE.min.css" />
@@ -122,17 +154,18 @@
         <option value="$PROJECT_DIR$/public/uploads/incomingText.txt" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/routes/addText.js" />
         <option value="$PROJECT_DIR$/routes/signup.js" />
-        <option value="$PROJECT_DIR$/views/partials/sidebar.ejs" />
-        <option value="$PROJECT_DIR$/routes/profile.js" />
-        <option value="$PROJECT_DIR$/views/partials/header.ejs" />
         <option value="$PROJECT_DIR$/views/userGroup.ejs" />
         <option value="$PROJECT_DIR$/views/addText.ejs" />
         <option value="$PROJECT_DIR$/models/User.js" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/public/dist/js/myJavaScript.js" />
+        <option value="$PROJECT_DIR$/routes/addText.js" />
+        <option value="$PROJECT_DIR$/routes/profile.js" />
         <option value="$PROJECT_DIR$/views/profile.ejs" />
+        <option value="$PROJECT_DIR$/views/partials/sidebar.ejs" />
+        <option value="$PROJECT_DIR$/views/partials/header.ejs" />
+        <option value="$PROJECT_DIR$/config/passport.js" />
       </list>
     </option>
   </component>
@@ -182,12 +215,31 @@
             <path>
               <item name="OyunCeviri-EasyTranslation" type="b2602c69:ProjectViewProjectNode" />
               <item name="OyunCeviri-EasyTranslation" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OyunCeviri-EasyTranslation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OyunCeviri-EasyTranslation" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OyunCeviri-EasyTranslation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OyunCeviri-EasyTranslation" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OyunCeviri-EasyTranslation" type="b2602c69:ProjectViewProjectNode" />
               <item name="OyunCeviri-EasyTranslation" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OyunCeviri-EasyTranslation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OyunCeviri-EasyTranslation" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -207,12 +259,13 @@
     <property name="javascript.nodejs.core.library.configured.version" value="8.9.4" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Vahap\Documents\NodeProject\OyunCeviri-EasyTranslation\public\dist\img" />
+      <recent name="C:\Users\VahapZTL\Documents\NodeProject\OyunCeviri-EasyTranslation\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\VahapZTL\Documents\NodeProject\OyunCeviri-EasyTranslation\public\js" />
       <recent name="C:\Users\VahapZTL\Documents\NodeProject\OyunCeviri-EasyTranslation\public\css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\VahapZTL\Documents\NodeProject\OyunCeviri-EasyTranslation\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -351,18 +404,17 @@
       <workItem from="1517773839543" duration="4005000" />
       <workItem from="1517839068835" duration="4077000" />
       <workItem from="1517844491732" duration="4097000" />
-      <workItem from="1517926250877" duration="6953000" />
+      <workItem from="1517926250877" duration="13301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127960000" />
+    <option name="totallyTimeSpent" value="134308000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15911485" sideWeight="0.49436393" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15911485" sideWeight="0.49436393" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -501,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/passport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/uploads/incomingText.txt" />
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -557,13 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/sidebar.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="18" lean-forward="false" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -718,19 +756,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/addText.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="58" />
+        <state relative-caret-position="-17">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/addText.js">
+    <entry file="file://$PROJECT_DIR$/views/partials/sidebar.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        <state relative-caret-position="119">
+          <caret line="7" column="58" lean-forward="false" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="70" lean-forward="false" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/addText.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="43" column="80" lean-forward="true" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/profile.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="30" column="121" lean-forward="false" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="121" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -742,29 +814,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/addText.ejs">
+    <entry file="file://$PROJECT_DIR$/config/passport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="35" column="91" lean-forward="false" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="91" />
+        <state relative-caret-position="323">
+          <caret line="52" column="63" lean-forward="false" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/profile.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="125" column="76" lean-forward="false" selection-start-line="125" selection-start-column="76" selection-end-line="125" selection-end-column="76" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

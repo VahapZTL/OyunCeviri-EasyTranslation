@@ -28,7 +28,7 @@
                     <!-- /.box-header -->
                     <div id="profileBoxId" class="box box-primary">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+                            <img class="profile-user-img img-responsive img-circle" src="dist/img/<%= user.local.image %>" alt="User profile picture">
 
                             <h3 class="profile-username text-center"><%= user.local.name %> <%= user.local.surname %></h3>
 
@@ -89,13 +89,14 @@
 
                         <h3>Bilgileriniz</h3>
 
-                        <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" role="form" action="/profile" method="post" enctype="multipart/form-data">
                             <div class="text-center" style="margin-bottom: 10px;">
                                 <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
                                 <h6>Fotoğraf yükleyin...</h6>
 
-                                <input class="form-control" type="file" name="image">
+                                <input class="form-control" type="file" name="image" accept=".jpg">
                             </div>
+                            <input class="hidden" name="user_id" value="<%= user._id %>">
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Adınız:</label>
                                 <div class="col-lg-8">
@@ -129,7 +130,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"></label>
                                 <div class="col-md-8">
-                                    <input class="btn btn-primary" value="Kaydet" type="button">
+                                    <input class="btn btn-primary" value="Kaydet" type="submit">
                                     <span></span>
                                     <input class="btn btn-default" value="İptal" type="reset" onclick="showProfileBox();">
                                 </div>

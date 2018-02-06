@@ -50,6 +50,7 @@ module.exports = function(passport) {
 
                         var newUser = new User();
 
+                        newUser.local.image    = 'default.jpg';
                         newUser.local.name     = req.body.name;
                         newUser.local.surname  = req.body.surname;
                         newUser.local.userRole = req.body.userRole;
