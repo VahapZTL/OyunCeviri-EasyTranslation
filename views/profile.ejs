@@ -81,20 +81,20 @@
                     <!-- /.box -->
                     <div id="editBoxId" class="personal-info hidden">
 
-                        <div class="alert alert-info alert-dismissable hidden">
-                            <a class="panel-close close" data-dismiss="alert">×</a>
-                            <i class="fa fa-coffee"></i>
-                            <p id="alertMessage"></p>
+                        <div id="alertSuccess" class="alert alert-success hidden">
+                            <strong>Başarılı!</strong> Bilgileriniz güncellendi.
+                        </div>
+
+                        <div id="alertFailure" class="alert alert-danger hidden">
+                            <strong>Hata!</strong> Bilgileriniz güncellenirken hata meydana geldi!
                         </div>
 
                         <h3>Bilgileriniz</h3>
 
-                        <form class="form-horizontal" role="form" action="/profile" method="post" enctype="multipart/form-data">
-                            <div class="text-center" style="margin-bottom: 10px;">
-                                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                                <h6>Fotoğraf yükleyin...</h6>
-
-                                <input class="form-control" type="file" name="image" accept=".jpg">
+                        <form class="form-horizontal" role="form" id="formInfo" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="exampleInputFile">Dosya Yükle</label>
+                                <input type="file" id="InputMainText" accept=".jpg" name="image">
                             </div>
                             <input class="hidden" name="user_id" value="<%= user._id %>">
                             <div class="form-group">
@@ -130,7 +130,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"></label>
                                 <div class="col-md-8">
-                                    <input class="btn btn-primary" value="Kaydet" type="submit">
+                                    <input class="btn btn-primary" value="Kaydet" type="submit" id="update-info">
                                     <span></span>
                                     <input class="btn btn-default" value="İptal" type="reset" onclick="showProfileBox();">
                                 </div>
@@ -168,7 +168,10 @@
 <script src="dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script>
 <script src="dist/js/myJavaScript.js"></script>
+
 </body>
 
 </html>
