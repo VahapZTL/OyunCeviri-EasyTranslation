@@ -6,7 +6,7 @@
 </head>
 
 <body class="skin-blue fixed sidebar-mini">
-<div class="wrapper">
+    <div class="wrapper">
     <%- include ./partials/header.ejs %>
 
     <%- include ./partials/sidebar.ejs%>
@@ -17,68 +17,73 @@
                 Çeviri Ekle
             </h1>
             <ol class="breadcrumb">
-                <li><a href="/"><i class="fa fa-dashboard"></i>Anasayfa</a></li>
-                <li><a href="/addText">Çeviri Ekle</a></li>
+                <li>
+                    <a href="/">
+                        <i class="fa fa-dashboard"></i>Anasayfa</a>
+                </li>
+                <li>
+                    <a href="/addText">Çeviri Ekle</a>
+                </li>
             </ol>
         </section>
 
-    <section class="content">
-        <div class="row">
-            <!-- left column -->
-            <div class="col-md-8 col-md-offset-2">
-                <!-- general form elements -->
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Yükleme Paneli</h3>
-                    </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" method="post" action="/addText" enctype="multipart/form-data">
-                <div class="box-body">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Oyun Adı</label>
-                        <input type="text" class="form-control" id="InputGameName" placeholder="Oyun Adı" name="gameName">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputFile">Dosya Yükle</label>
-                        <input type="file" id="InputMainText" accept=".zip,.rar" name="mainText">
-                    </div>
-                </div>
-                <!-- /.box-body -->
+        <section class="content">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-8 col-md-offset-2">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Yükleme Paneli</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form role="form" method="post" action="/addText" enctype="multipart/form-data">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Oyun Adı</label>
+                                    <input type="text" class="form-control" id="InputGameName" placeholder="Oyun Adı" name="gameName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Dosya Yükle</label>
+                                    <input type="file" id="InputMainText" accept=".zip,.rar" name="mainText">
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Yükle</button>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Yükle</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
-        </div>
-    </div>
-    </div>
-    </section>
+            </div>
+        </section>
     </div>
     <%- include ./partials/footer.ejs%>
 
-</div>
-<!-- jQuery 2.2.3 -->
-<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/app.min.js"></script>
-<!-- Sparkline -->
-<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- ChartJS 1.0.1 -->
-<script src="plugins/chartjs/Chart.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+    </div>
+    <!-- jQuery 3 -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <!-- Sparkline -->
+    <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- jvectormap  -->
+    <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- SlimScroll -->
+    <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- ChartJS -->
+    <script src="bower_components/chart.js/Chart.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard2.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
 </body>
 
 </html>

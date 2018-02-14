@@ -1,72 +1,88 @@
-<!-- Left side column. contains the sidebar -->
-<aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-        <!-- Sidebar user panel -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="dist/img/<%= user.local.image %>" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-                <p><%= user.local.name %></p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-        </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Arama...">
-                <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-        </form>
-        <!-- /.search form -->
-        <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
-            <li class="header">Menü</li>
-            <li class="treeview active">
-                <a href="/">
-                    <i class="fa fa-dashboard"></i> <span>Kontrol Paneli</span>
-                    <span class="pull-right-container">
-            </span>
-                </a>
-            <% if(user.local.userRole == 'ProjectManager' || user.local.userRole == 'Administrator'){ %>
+<div class="main-sidebar">
+  <!-- Inner sidebar -->
+  <div class="sidebar">
+    <!-- user panel (Optional) -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="dist/img/<%= user.local.image %>" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>
+          <%= user.local.name %>
+            <%= user.local.surname %>
+        </p>
+
+        <a href="#">
+          <i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+    <!-- /.user-panel -->
+
+    <!-- Search Form (Optional) -->
+    <form action="#" method="get" class="sidebar-form">
+      <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Arama...">
+        <span class="input-group-btn">
+          <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    </form>
+    <!-- /.sidebar-form -->
+
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu">
+      <li class="header">Menü</li>
+      <li class="treeview active">
+        <a href="/">
+          <i class="fa fa-dashboard"></i>
+          <span>Kontrol Paneli</span>
+          <span class="pull-right-container">
+          </span>
+        </a>
+        <% if(user.local.userRole == 'ProjectManager' || user.local.userRole == 'Administrator'){ %>
+          <li class="treeview">
+            <a href="/signup">
+              <i class="fa fa-user-plus"></i>
+              <span>Kullanıcı Kaydı</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="/signup">
+              <i class="fa fa-user-plus"></i>
+              <span>Kullanıcı Gruplandır</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="/addText">
+              <i class="fa fa-tasks"></i>
+              <span>Çeviri Ekle</span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-tasks"></i>
+              <span>Görev Ekle</span>
+            </a>
+          </li>
+          <% } %>
             <li class="treeview">
-                <a href="/signup">
-                    <i class="fa fa-user-plus"></i>
-                    <span>Kullanıcı Kaydı</span>
-                </a>
+              <a href="#">
+                <i class="fa fa-tasks"></i>
+                <span>Çevirileri Görüntüle</span>
+              </a>
             </li>
             <li class="treeview">
-                <a href="/signup">
-                    <i class="fa fa-user-plus"></i>
-                    <span>Kullanıcı Gruplandır</span>
-                </a>
+              <a href="#">
+                <i class="fa fa-tasks"></i>
+                <span>Görevler</span>
+              </a>
             </li>
-            <li class="treeview">
-                <a href="/addText">
-                    <i class="fa fa-tasks"></i> <span>Çeviri Ekle</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-tasks"></i> <span>Görev Ekle</span>
-                </a>
-            </li>
-            <% } %>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-tasks"></i> <span>Çevirileri Görüntüle</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-tasks"></i> <span>Görevler</span>
-                </a>
-            </li>
-        </ul>
-    </section>
-    <!-- /.sidebar -->
-</aside>
+    </ul>
+    <!-- /.sidebar-menu -->
+
+  </div>
+  <!-- /.sidebar -->
+</div>
+<!-- /.main-sidebar -->

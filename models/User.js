@@ -13,6 +13,10 @@ var userSchema = mongoose.Schema({
         createdDate: {
             type: Date,
             default: Date.now
+        },
+        groupId: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'UserGoup'
         }
     }
 });

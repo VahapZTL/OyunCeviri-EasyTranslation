@@ -1,94 +1,121 @@
 <!doctype html>
 <html>
+
 <head>
     <% include ./partials/head.ejs %>
 </head>
-<body class="skin-blue fixed sidebar-mini">
+
+<body class="skin-red fixed sidebar-mini">
 
     <% include ./partials/header.ejs %>
 
     <% include ./partials/sidebar.ejs %>
 
+    <section class="content-header">
+        <h1>
+          Kullanıcı Ekle
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Anasayfa</a></li>
+          <li><a href="#">Kullanıcı Ekle</a></li>
+        </ol>
+    </section>
+
     <div class="register-box">
-        <div class="register-logo">
-            <a href="/"><b>Oyun-Çeviri</b></a>
-        </div>
-
-        <div class="register-box-body">
-            <p class="login-box-msg">Kullanıcı Kaydı</p>
-
-            <form action="/signup" method="post">
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="İsim" name="name">
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Soyisim" name="surname">
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email" name="email">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Şifre" name="password">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Şifre Tekrar">
-                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <select name="userRole" class="form-control">
-                        <option value="ProjectManager">Proje Yöneticisi</option>
-                        <option value="Controller">Denetmen</option>
-                        <option value="ProofReader">Düzeltmen</option>
-                        <option value="Translator">Çevirmen</option>
-                    </select>
-                </div>
-                <div class="row">
-                    <!-- /.col -->
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Kaydet</button>
-                    </div>
-                    <!-- /.col -->
-                </div>
-            </form>
-        </div>
-        <!-- /.form-box -->
+    <div class="register-logo">
+        <a href="/">
+            <b>Oyun-Çeviri</b>
+        </a>
     </div>
-    <!-- /.register-box -->
 
-    <!-- jQuery 2.2.3 -->
-    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <!-- Bootstrap 3.3.6 -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="plugins/fastclick/fastclick.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/app.min.js"></script>
-    <!-- Sparkline -->
-    <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-    <!-- jvectormap -->
-    <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <!-- SlimScroll 1.3.0 -->
-    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <!-- ChartJS 1.0.1 -->
-    <script src="plugins/chartjs/Chart.min.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard2.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
-    <script src="plugins/iCheck/icheck.min.js"></script>
-    <script>
-        $(function () {
-            $('input').iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue',
-                increaseArea: '20%' // optional
-            });
+    <div class="register-box-body">
+        <p class="login-box-msg">Kullanıcı Kaydı</p>
+
+        <div id="alertSuccess" class="alert alert-success hidden">
+            <strong>Başarılı!</strong> Bilgileriniz güncellendi.
+        </div>
+
+        <div id="alertFailure" class="alert alert-danger hidden">
+            <strong>Hata!</strong> Bilgileriniz güncellenirken hata meydana geldi!
+        </div>
+
+        <form role="form" id="formSignup" enctype="multipart/form-data">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="İsim" name="name">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Soyisim" name="surname">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="email" class="form-control" placeholder="Email" name="email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="Şifre" name="password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="Şifre Tekrar">
+                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <select name="userRole" class="form-control">
+                    <option value="ProjectManager">Proje Yöneticisi</option>
+                    <option value="Controller">Denetmen</option>
+                    <option value="ProofReader">Düzeltmen</option>
+                    <option value="Translator">Çevirmen</option>
+                </select>
+            </div>
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <input type="submit" class="btn btn-primary btn-block btn-flat" value="Kaydet" />
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+    </div>
+    <!-- /.form-box -->
+</div>
+<!-- /.register-box -->
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- Sparkline -->
+<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap  -->
+<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- SlimScroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- ChartJS -->
+<script src="bower_components/chart.js/Chart.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard2.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' /* optional */
         });
-    </script>
+    });
+</script>
 </body>
+
 </html>
