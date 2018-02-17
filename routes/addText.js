@@ -11,6 +11,8 @@ router.get('/', isLoggedIn, function(req, res, next) {
 });
 
 router.post('/', isLoggedIn, function (req, res, next) {
+    console.log(req.body.gameName);
+    console.log(req.files.mainText.name);
     if (!req.files)
         return res.status(400).send('No files were uploaded.');
 

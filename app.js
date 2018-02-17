@@ -37,6 +37,7 @@ var profile = require('./routes/profile');
 var addText = require('./routes/addText');
 var users = require('./routes/users');
 var logout = require('./routes/logout');
+var admin = require('./routes/admin');
 
 require('./config/passport')(passport);
 
@@ -70,6 +71,7 @@ app.use('/signup', signup);
 app.use('/addText', addText);
 app.use('/profile', profile);
 app.use('/users', users);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
