@@ -6,11 +6,11 @@ var MainText = mongoose.model('MainText');
 var DecompressZip = require('decompress-zip');
 var excel = require('xlsx');
 
-router.get('/', isLoggedIn, function(req, res, next) {
+router.get('/', isLoggedIn, requireRole, function(req, res, next) {
     res.render('addText', {user: req.user});
 });
 
-router.post('/', isLoggedIn, function (req, res, next) {
+router.post('/', isLoggedIn, requireRole, function (req, res, next) {
     console.log(req.body.gameName);
     console.log(req.files.mainText.name);
     if (!req.files)
@@ -64,4 +64,12 @@ function isLoggedIn(req, res, next) {
 
     // if they aren't redirect them to the home page
     res.redirect('/login');
+}
+
+function requireRole (req, res, next) {
+    if (req.user && req.user.local.userRole === 'Administrator' || req.user.local.userRole === 'ProjectManager') {
+        next();
+    } else {
+        res.send(403);
+    }
 }

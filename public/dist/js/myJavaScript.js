@@ -1,6 +1,16 @@
 $(function(){
     console.log("Document Ready");
 
+    $('.edit-btn').on('click', function(){
+        $('#profileBoxId').addClass('hidden');
+        $('#editBoxId').removeClass('hidden');
+    });
+
+    $('.cancel-btn').on('click', function(){
+        $('#editBoxId').addClass('hidden');
+        $('#profileBoxId').removeClass('hidden');
+    });
+
     $('.upload-btn').on('click', function (){
 
         var profileFormData = new FormData();
@@ -98,5 +108,28 @@ $(function(){
                 }
             });
         }
+    });
+    
+    $('#signup-btn').on('click', function(){
+        var signupForm = new FormData();
+        
+        signupForm.append('name', $('#inputSigName').val());
+        signupForm.append('surname', $('#inputSigSurname').val());
+        signupForm.append('email', $('#inputSigEmail').val());
+        signupForm.append('password', $('#inputSigPass1').val());
+        signupForm.append('userRole', $('#inputSigRole').val());
+        
+        console.log(signupForm);
+
+        $.ajax({
+            url: '/signup',
+            type: 'POST',
+            data: signupForm,
+            processData: false,
+            contentType: false,
+            success: function(data){
+                $('#alertSuccess').removeClass('hidden');
+            }
+        });
     });
 });

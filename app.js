@@ -35,7 +35,7 @@ var login = require('./routes/login');
 var signup = require('./routes/signup');
 var profile = require('./routes/profile');
 var addText = require('./routes/addText');
-var users = require('./routes/users');
+var userGroup = require('./routes/userGroup');
 var logout = require('./routes/logout');
 var admin = require('./routes/admin');
 
@@ -70,7 +70,7 @@ app.use('/logout', logout);
 app.use('/signup', signup);
 app.use('/addText', addText);
 app.use('/profile', profile);
-app.use('/users', users);
+app.use('/userGroup', userGroup);
 app.use('/admin', admin);
 
 // catch 404 and forward to error handler

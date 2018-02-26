@@ -5,7 +5,7 @@
     <%- include ./partials/head.ejs %>
 </head>
 
-<body class="skin-blue fixed sidebar-mini">
+<body class="skin-red fixed sidebar-mini">
 <div class="wrapper">
     <%- include ./partials/header.ejs %>
 
@@ -26,7 +26,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4 ">
                     <!-- /.box-header -->
-                    <div id="profileBoxId" class="box box-primary hidden">
+                    <div id="profileBoxId" class="box box-primary">
                         <div class="box-body box-profile">
                             <img class="profile-user-img img-responsive img-circle" src="dist/img/<%= user.local.image %>" alt="User profile picture">
 
@@ -74,12 +74,12 @@
 
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
                             </div>
-                            <button class="btn btn-success" onclick="hideProfileBox();">Bilgileri Düzenle</button>
+                            <button class="btn edit-btn btn-success">Bilgileri Düzenle</button>
                         </div>
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
-                    <div id="editBoxId" class="personal-info">
+                    <div id="editBoxId" class="personal-info hidden">
 
                         <div id="alertSuccess" class="alert alert-success hidden">
                             <strong>Başarılı!</strong> Bilgileriniz güncellendi.
@@ -137,7 +137,7 @@
                                             <button class="btn btn-block btn-success btn-sm upload-btn" type="button">Kaydet</button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-block btn-danger btn-sm">İptal</button>
+                                            <button type="button" class="btn btn-block btn-danger btn-sm cancel-btn">İptal</button>
                                         </td>
                                     </tr>
                                 </div>

@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var UserGroupSchema = new Schema({
+    groupName: String,
     projectManager: {
         type: Schema.ObjectId,
         ref: 'User'
