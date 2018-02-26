@@ -64,6 +64,9 @@
                     </div>
                     <div class="form-group has-feedback">
                         <select name="userRole" class="form-control" id="inputSigRole">
+                            <% if(user.local.userRole === 'Administrator'){ %>
+                            <option value="Administrator">Administrator</option>
+                            <% } %>
                             <option value="ProjectManager">Proje Yöneticisi</option>
                             <option value="Controller">Denetmen</option>
                             <option value="ProofReader">Düzeltmen</option>
