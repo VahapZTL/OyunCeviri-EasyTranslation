@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 var mongoose = require('mongoose');
 var MainText = mongoose.model('MainText');
-var unzip = require('unzip-stream');
+var DecompressZip = require('decompress-zip');
 var excel = require('xlsx');
 
 router.get('/', isLoggedIn, function(req, res, next) {
@@ -11,6 +11,8 @@ router.get('/', isLoggedIn, function(req, res, next) {
 });
 
 router.post('/', isLoggedIn, function (req, res, next) {
+    console.log(req.body.gameName);
+    console.log(req.files.mainText.name);
     if (!req.files)
         return res.status(400).send('No files were uploaded.');
 
@@ -25,21 +27,29 @@ router.post('/', isLoggedIn, function (req, res, next) {
         if (err)
             return res.status(500).send(err);
 
-        new Promise(function(resolve) {
+        var unzipper = new DecompressZip(process.cwd() + '/public/uploads/' + fileName + '.zip');
 
-            fs.createReadStream(process.cwd() + '/public/uploads/' + fileName + '.zip')
-                .pipe(unzip.Extract({ path: process.cwd() + '/public/uploads/' }));
-            resolve(process.cwd() + '/public/uploads/' + fileName + '.xlsx');
-
-        }).then(function(result) {
-
-            var workbook = excel.readFile(result);
+        unzipper.on('error', function (err) {
+            console.log('Caught an error');
+        });
+        
+        unzipper.on('extract', function (log) {
+            var workbook = excel.readFile(process.cwd() + '/public/uploads/' + fileName + '.xlsx');
             var sheet_name_list = workbook.SheetNames;
             var excelData = excel.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
             console.log(excelData);
-
-            res.send('File uploaded!');
-            return excelData;
+            res.status(200).send('File uploaded!');
+        });
+        
+        unzipper.on('progress', function (fileIndex, fileCount) {
+            console.log('Extracted file ' + (fileIndex + 1) + ' of ' + fileCount);
+        });
+        
+        unzipper.extract({
+            path: process.cwd() + '/public/uploads/',
+            filter: function (file) {
+                return file.type !== "SymbolicLink";
+            }
         });
     });
 });

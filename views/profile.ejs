@@ -26,7 +26,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4 ">
                     <!-- /.box-header -->
-                    <div id="profileBoxId" class="box box-primary">
+                    <div id="profileBoxId" class="box box-primary hidden">
                         <div class="box-body box-profile">
                             <img class="profile-user-img img-responsive img-circle" src="dist/img/<%= user.local.image %>" alt="User profile picture">
 
@@ -79,7 +79,7 @@
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
-                    <div id="editBoxId" class="personal-info hidden">
+                    <div id="editBoxId" class="personal-info">
 
                         <div id="alertSuccess" class="alert alert-success hidden">
                             <strong>Başarılı!</strong> Bilgileriniz güncellendi.
@@ -92,47 +92,54 @@
                         <h3>Bilgileriniz</h3>
 
                         <form class="form-horizontal" role="form" id="formInfo" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="exampleInputFile">Dosya Yükle</label>
-                                <input type="file" id="InputMainText" accept=".jpg" name="image">
-                            </div>
-                            <input class="hidden" name="user_id" value="<%= user._id %>">
+                            <input class="hidden" id="user_id" value="<%= user._id %>">
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Adınız:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" placeholder="Adınız" type="text" name="name">
+                                    <input class="form-control" placeholder="Adınız" type="text" id="inputName">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Soyadınız:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" placeholder="Soyadınız" type="text" name="surname">
+                                    <input class="form-control" placeholder="Soyadınız" type="text" id="inputSurname">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Email:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" placeholder="email@gmail.com" type="text" name="email">
+                                    <input class="form-control" placeholder="email@gmail.com" type="text" id="inputEmail">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Şifre:</label>
                                 <div class="col-md-8">
-                                    <input class="form-control" placeholder="11111122333" type="password" name="password">
+                                    <input class="form-control" placeholder="Şifre" type="password" id="inputPass1">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Şifre(tekrar):</label>
                                 <div class="col-md-8">
-                                    <input class="form-control" placeholder="11111122333" type="password" name="_password">
+                                    <input class="form-control" placeholder="Şifre" type="password" id="inputPass2">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Resim:</label>
+                                <div class="col-md-8">
+                                    <input id="upload-input" type="file" name="image" accept=".jpg">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label"></label>
                                 <div class="col-md-8">
-                                    <input class="btn btn-primary" value="Kaydet" type="submit" id="update-info">
-                                    <span></span>
-                                    <input class="btn btn-default" value="İptal" type="reset" onclick="showProfileBox();">
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-block btn-success btn-sm upload-btn" type="button">Kaydet</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-block btn-danger btn-sm">İptal</button>
+                                        </td>
+                                    </tr>
                                 </div>
                             </div>
                         </form>
@@ -164,10 +171,6 @@
 <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS -->
 <script src="bower_components/chart.js/Chart.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
 <script src="dist/js/myJavaScript.js"></script>
 
 </body>
