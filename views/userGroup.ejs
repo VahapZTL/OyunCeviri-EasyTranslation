@@ -34,18 +34,21 @@
                         <div class="register-box">
                             <form role="form" id="formSignup" enctype="multipart/form-data">
                                 <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" placeholder="Grup Adı" name="groupName">
+                                    <input type="text" class="form-control" placeholder="Grup Adı" name="groupName" id="inputGroupName">
                                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                                 </div>
                                 <div class="form-group has-feedback">
-                                    <select name="projectManager" class="form-control">
+                                    <select name="projectManager" class="form-control" id="inputProjectManager">
                                         <option disabled selected>Proje Yöneticisi</option>
+                                            <% projectManRes.forEach(function(projectMan){ %>
+                                                <option value="<%= projectMan._id %>"><%= projectMan.name %> <%= projectMan.surname %></option>
+                                            <%});%>
                                     </select>
                                 </div>
                                 <div class="row">
                                     <!-- /.col -->
                                     <div class="box-footer">
-                                        <button type="button" class="btn btn-primary btn-block btn-flat">Kaydet</button>
+                                        <button type="button" class="btn btn-primary btn-block btn-flat addGroup-btn">Kaydet</button>
                                     </div>
                                     <!-- /.col -->
                                 </div>
@@ -67,24 +70,29 @@
                             <div class="register-box">
                                 <form role="form" id="formSignup" enctype="multipart/form-data">
                                     <div class="form-group has-feedback">
-                                        <select name="userId" class="form-control">
-                                            <option disabled selected>Kullanıcı Seç</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <select name="groupId" class="form-control">
+                                        <select name="groupId" class="form-control" id="groups">
                                             <option disabled selected>Grup Seç</option>
+                                            <% userGroupRes.forEach(function(userGroup){ %>
+                                                <option value="<%= userGroup._id %>"><%= userGroup.name %></option>
+                                            <%});%>
                                         </select>
                                     </div>
                                     <div class="form-group has-feedback">
-                                        <select name="userRole" class="form-control">
+                                        <select name="userRole" class="form-control userRole" id="userRoleID">
                                             <option disabled selected>Mevki Seç</option>
+                                            <option value="Controller">Denetmen</option>
+                                            <option value="ProofReader">Düzeltmen</option>
+                                            <option value="Translator">Çevirmen</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <select name="userId[]" class="form-control select2" multiple="multiple" data-placeholder="Kullanıcı Seç" id="rolledUser">
                                         </select>
                                     </div>
                                     <div class="row">
                                         <!-- /.col -->
                                         <div class="box-footer">
-                                            <button type="button" class="btn btn-primary btn-block btn-flat">Kaydet</button>
+                                            <button type="button" class="btn btn-primary btn-block btn-flat groupUser-btn">Kaydet</button>
                                         </div>
                                         <!-- /.col -->
                                     </div>
@@ -116,7 +124,11 @@
 <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS -->
 <script src="bower_components/chart.js/Chart.js"></script>
+<!-- Select2 -->
+<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- My Javascript -->
 <script src="dist/js/myJavaScript.js"></script>
+<script>$('.select2').select2();</script>
 </body>
 
 </html>

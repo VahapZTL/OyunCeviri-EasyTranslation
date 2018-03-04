@@ -15,7 +15,7 @@ var UserGroupSchema = new Schema({
         type: Schema.ObjectId,
         ref: 'User'
     },
-    translaters: [{
+    translators: [{
         type: Schema.ObjectId,
         ref: 'User'
     }],

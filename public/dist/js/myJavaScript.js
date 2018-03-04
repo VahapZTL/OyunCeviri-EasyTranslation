@@ -1,6 +1,8 @@
 $(function(){
     console.log("Document Ready");
 
+    $('.select2').select2()
+
     $('.edit-btn').on('click', function(){
         $('#profileBoxId').addClass('hidden');
         $('#editBoxId').removeClass('hidden');
@@ -37,7 +39,7 @@ $(function(){
                 data: profileFormData,
                 processData: false,
                 contentType: false,
-                success: function(data){
+                success: function(){
                     $('#alertSuccess').removeClass('hidden');
                 },
                 xhr: function() {
@@ -85,7 +87,7 @@ $(function(){
                 data: translateForm,
                 processData: false,
                 contentType: false,
-                success: function(data){
+                success: function(){
                     $('#alertSuccess').removeClass('hidden');
                 },
                 xhr: function() {
@@ -127,8 +129,71 @@ $(function(){
             data: signupForm,
             processData: false,
             contentType: false,
-            success: function(data){
+            success: function(){
                 $('#alertSuccess').removeClass('hidden');
+            }
+        });
+    });
+
+    $('.addGroup-btn').on('click', function () {
+        var addGroupForm = new FormData();
+
+        addGroupForm.append('groupName', $('#inputGroupName').val());
+        addGroupForm.append('projectManager', $('#inputProjectManager').val());
+
+        $.ajax({
+            url: '/userGroup/addGroup',
+            type: 'POST',
+            data: addGroupForm,
+            processData: false,
+            contentType: false,
+            success: function(groupData){
+                $('#groups').append($('<option>', {
+                    value: groupData._id,
+                    text: groupData.name
+                }));
+            }
+        });
+    });
+
+    $('.userRole').change(function () {
+        var userRoleForm = new FormData();
+
+        userRoleForm.append('userRole', $('.userRole').val());
+        console.log($('.userRole').val());
+        $.ajax({
+            url: '/userGroup/selectRole',
+            type: 'POST',
+            data: userRoleForm,
+            processData: false,
+            contentType: false,
+            success: function(rolledData){
+                rolledData.forEach(function(roleUser){
+                    $('#rolledUser').append($('<option>', {
+                        value: roleUser._id,
+                        text: roleUser.name + ' ' + roleUser.surname
+                    }));
+                });
+            }
+        });
+    });
+
+
+    $('.groupUser-btn').on('click', function () {
+        var addUserToGtoupForm = new FormData();
+
+        addUserToGtoupForm.append('groupID', $('#groups').val());
+        addUserToGtoupForm.append('userRole', $('#userRoleID').val());
+        addUserToGtoupForm.append('rolledUser', $('#rolledUser').val());
+
+        $.ajax({
+            url: "/userGroup",
+            type: "POST",
+            data: addUserToGtoupForm,
+            processData: false,
+            contentType: false,
+            success:function(data){
+                console.log('Başarılı');
             }
         });
     });
