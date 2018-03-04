@@ -21,7 +21,7 @@ router.get('/', isLoggedIn, requireRole, function(req, res, next) {
             });
 
         User.find({ 'local.userRole' : 'ProjectManager'}, function (err, user) {
-            if(err) console.log(err);
+            if (err) throw err;
             if(user.length <= 0) console.log('Proje Yöneticisi Bulunamadı!');
     
             projectManObj = user.map(function (userData) {
@@ -38,13 +38,13 @@ router.get('/', isLoggedIn, requireRole, function(req, res, next) {
 });
 
 router.post('/', isLoggedIn, requireRole, function (req, res, next) {
-    console.log(req.body);
+    
     UserGroup.findOne({ _id: req.body.groupID }, function (err, userGroupData) {
-        if (err) console.log(err);
+        if (err) throw err;
         if (userGroupData.length <= 0 ) console.log('User Grup Modeli Bulunamadı!');
 
         var _rolledUser = req.body.rolledUser;
-        console.log(_rolledUser.indexOf(','));
+        
         if (req.body.userRole === 'Translator') {
             if (_rolledUser.indexOf(',') > -1){
                 var comingRolledUser = _rolledUser.split(',');
@@ -54,34 +54,34 @@ router.post('/', isLoggedIn, requireRole, function (req, res, next) {
                 });
 
                 userGroupData.save(function (err) {
-                    if (err) console.log(err);
+                    if (err) throw err;
                     console.log('User Goup Kaydedildi.1');
-                    res.status(200);
+                    res.status(200).send('User Goup Kaydedildi');
                 });
             }else {
                 userGroupData.translators.push(_rolledUser);
 
                 userGroupData.save(function (err) {
-                    if (err) console.log(err);
+                    if (err) throw err;
                     console.log('User Goup Kaydedildi.2');
-                    res.status(200);
+                    res.status(200).send('User Goup Kaydedildi');
                 });
             }
         }else if (req.body.userRole === 'ProofReader') {
             userGroupData.proofreader = _rolledUser;
 
             userGroupData.save(function (err) {
-                if (err) console.log(err);
+                if (err) throw err;
                 console.log('User Goup Kaydedildi.3');
-                res.status(200);
+                res.status(200).send('User Goup Kaydedildi');
             });
         }else if (req.body.userRole === 'Controller') {
             userGroupData.controller = _rolledUser;
 
             userGroupData.save(function (err) {
-                if (err) console.log(err);
+                if (err) throw err;
                 console.log('User Goup Kaydedildi.4');
-                res.status(200);
+                res.status(200).send('User Goup Kaydedildi');
             });
         }else {
             console.log('Tanımlanamayan Mevki');
@@ -92,7 +92,7 @@ router.post('/', isLoggedIn, requireRole, function (req, res, next) {
 router.post('/addGroup', isLoggedIn, requireRole, function (req, res, next) {
     //Add Group Post
     UserGroup.findOne({groupName: req.body.groupName}, function (err, userGroup) {
-        if(err) console.log(err);
+        if (err) throw err;
         if(userGroup) console.log('Zaten böyle bir grup mevcut');
 
         var newGroup = new UserGroup();
@@ -101,7 +101,7 @@ router.post('/addGroup', isLoggedIn, requireRole, function (req, res, next) {
         newGroup.projectManager = req.body.projectManager;
 
         newGroup.save(function (err) {
-            if(err) console.log(err);
+            if (err) throw err;
             console.log("Başarıyla kaydedildi!");
         });
 
@@ -115,9 +115,9 @@ router.post('/addGroup', isLoggedIn, requireRole, function (req, res, next) {
 router.post('/selectRole', isLoggedIn, requireRole, function (req, res, next) {
 
     var selectedRoleRes = null;
-    console.log(req.body);
+    
     User.find({ 'local.userRole': req.body.userRole}, function (err, selectedRole) {
-        if (err) console.log(err);
+        if (err) throw err;
         if (!selectedRole) console.log('Seçilen mevkide kullanıcı yok!');
 
         selectedRoleRes = selectedRole.map(function (selectedRoleData) {

@@ -32,6 +32,14 @@
                             <h3 class="box-title">Grup Ekle</h3>
                         </div>
                         <div class="register-box">
+                            <div id="addGroupAlertSuccess" class="alert alert-success hidden">
+                                <strong>Başarılı!</strong> Grup Eklendi!
+                            </div>
+                
+                            <div id="addGroupAlertFailure" class="alert alert-danger hidden">
+                                <strong>Hata!</strong> Grup eklenirken hata meydana geldi!
+                            </div>
+
                             <form role="form" id="formSignup" enctype="multipart/form-data">
                                 <div class="form-group has-feedback">
                                     <input type="text" class="form-control" placeholder="Grup Adı" name="groupName" id="inputGroupName">
@@ -68,6 +76,13 @@
                         </div> 
                         <div class="register-box">
                             <div class="register-box">
+                                <div id="addUserAlertSuccess" class="alert alert-success hidden">
+                                    <strong>Başarılı!</strong> Kullanıcı Gruplandırıldı!
+                                </div>
+                    
+                                <div id="addUserAlertFailure" class="alert alert-danger hidden">
+                                    <strong>Hata!</strong> Kullanıcı gruplandırılırken hata meydana geldi!
+                                </div>
                                 <form role="form" id="formSignup" enctype="multipart/form-data">
                                     <div class="form-group has-feedback">
                                         <select name="groupId" class="form-control" id="groups">

@@ -152,6 +152,10 @@ $(function(){
                     value: groupData._id,
                     text: groupData.name
                 }));
+                $('#addGroupAlertSuccess').removeClass('hidden');
+            },
+            error: function(){
+                $('#addGroupAlertFailure').removeClass('hidden');
             }
         });
     });
@@ -193,7 +197,10 @@ $(function(){
             processData: false,
             contentType: false,
             success:function(data){
-                console.log('Başarılı');
+                $('#addUserAlertSuccess').removeClass('hidden');
+            },
+            error:function () {
+                $('#addUserAlertFailure').removeClass('hidden');
             }
         });
     });
