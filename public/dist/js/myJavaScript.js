@@ -1,8 +1,6 @@
 $(function(){
     console.log("Document Ready");
 
-    $('.select2').select2()
-
     $('.edit-btn').on('click', function(){
         $('#profileBoxId').addClass('hidden');
         $('#editBoxId').removeClass('hidden');
