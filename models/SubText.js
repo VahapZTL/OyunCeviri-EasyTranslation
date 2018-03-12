@@ -2,9 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var SubTextSchema = new Schema({
+    subTextName: String,
     texts: [{
         lineNum: String,
-        text: String
+        originalText: String,
+        translatedText: String
     }],
     baseText: {
         type: Schema.ObjectId,
@@ -12,6 +14,7 @@ var SubTextSchema = new Schema({
     },
     isTranslated: Boolean,
     isControlled: Boolean,
+    isFixed: Boolean,
     createdDate: {
         type: Date,
         default: Date.now
