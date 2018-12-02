@@ -17,7 +17,11 @@ var userSchema = mongoose.Schema({
         groupId: {
             type: mongoose.Schema.ObjectId,
             ref: 'UserGoup'
-        }
+        },
+        tasks: [{
+            type: mongoose.Schema.ObjectId,
+            ref: 'SubText'
+        }]
     }
 });
 
